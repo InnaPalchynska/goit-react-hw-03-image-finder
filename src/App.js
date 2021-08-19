@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import './App.css';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
@@ -9,7 +9,8 @@ import ImageGallery from './components/ImageGallery/ImageGallery';
 import Button from './components/Button/Button';
 import Modal from './components/modal/Modal';
 
-const apiKey = '21988009-297d867560bf729bce41e20bb';
+import getImagesApi from './components/Services/api';
+
 class App extends Component {
   state = {
     images: [],
@@ -49,11 +50,7 @@ class App extends Component {
   };
 
   getImages() {
-    this.setState({ loader: true });
-    let url = `https://pixabay.com/api/?q=${this.state.query}&page=${this.state.page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`;
-    axios
-      .get(url)
-      .then(res => res.data)
+    getImagesApi(this.state.query, this.state.page)
       .then(data =>
         this.setState(prevState => ({
           images: [...prevState.images, ...data.hits],

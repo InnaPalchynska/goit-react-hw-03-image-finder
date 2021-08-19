@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://InnaPalchynska.github.io/goit-react-hw-03-image-finder",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -13,6 +14,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
+    "react-redux": "^7.2.4",
     "react-scripts": "4.0.3",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
